@@ -1,4 +1,4 @@
-# acharya_capstone
+# Cooking Made Easy for GenZ: CARROT
 
 A new Flutter project.
 
