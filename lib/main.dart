@@ -10,7 +10,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   cameras = await availableCameras();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform,);
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget{
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget{
       },
       onGenerateRoute: (settings) {
         if (settings.name == '/camera'){
-          return PageRouteBuilder(pageBuilder: (_,__,___) => MyCam(cameras:cameras), transitionsBuilder: (_,__,___,child)=>child);
+          return PageRouteBuilder(pageBuilder: (_,__,___) => MyCam(cameras:cameras, model: settings.arguments as String,), transitionsBuilder: (_,__,___,child)=>child);
         }
       },
     );

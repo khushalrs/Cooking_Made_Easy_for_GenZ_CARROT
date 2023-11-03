@@ -36,6 +36,13 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   firebase_auth: ^4.7.2
+  firebase_ml_model_downloader: ^0.2.4+3
+  tflite_flutter_helper:
+    git:
+      url: https://github.com/elephantum/tflite_flutter_helper.git
+      ref: a7d7a59a33f7cffa0a2a12ab05625807622cc97a
+  fluttertoast: ^8.2.2
+  url_launcher: ^6.0.2
 
 dev_dependencies:
   flutter_test:
@@ -45,7 +52,8 @@ dev_dependencies:
   provider: ^6.0.5
   camera: ^0.9.4+5
   permission_handler: ^10.2.0
-  tflite_flutter: ^0.10.3
+  tflite_flutter: ^0.9.0
+  cross_file_image: ^1.1.0
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

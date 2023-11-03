@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_ml_model_downloader/firebase_ml_model_downloader.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -13,6 +14,7 @@ class MyLogin extends StatefulWidget {
 class _MyLoginState extends State<MyLogin> {
   late LoginData _data;
   bool _isSignedIn = false;
+  String localModelPath ='';
 
   Future<String?> _onLogin(LoginData data) async {
     try {
@@ -63,7 +65,7 @@ class _MyLoginState extends State<MyLogin> {
         primaryColor: Theme.of(context).primaryColor,
       ),
       onSubmitAnimationCompleted: () {
-        Navigator.of(context).pushReplacementNamed(_isSignedIn ? '/camera': 'login',);
+        Navigator.of(context).pushReplacementNamed(_isSignedIn ? '/camera': 'login',arguments: localModelPath);
       },
     );
   }
